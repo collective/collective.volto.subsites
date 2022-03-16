@@ -54,6 +54,7 @@ setup(
         "plone.api>=1.8.4",
         "plone.restapi",
         "plone.app.dexterity",
+        "plone.app.caching>=3.0.0a1",
     ],
     extras_require={
         "test": [
