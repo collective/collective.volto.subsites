@@ -5,7 +5,8 @@ Changelog
 1.4.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add plone.app.caching >= 3.0.0a1 dependency to make it work in Plone 5.2
+  [erral]
 
 
 1.4.0 (2021-10-10)
