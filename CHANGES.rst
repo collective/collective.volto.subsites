@@ -5,6 +5,9 @@ Changelog
 1.4.1 (unreleased)
 ------------------
 
+- Added Spanish translations.
+  [macagua]
+
 - Add plone.app.caching >= 3.0.0a1 dependency to make it work in Plone 5.2
   [erral]
 
