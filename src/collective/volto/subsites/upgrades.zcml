@@ -11,4 +11,13 @@
         handler=".upgrades.to_1100"
         />
   </genericsetup:upgradeSteps>
+  <genericsetup:upgradeSteps
+    source="1100"
+    destination="1200"
+    profile="collective.volto.subsites:default">
+    <genericsetup:upgradeStep
+        title="Add versioning"
+        handler=".upgrades.to_1200"
+        />
+  </genericsetup:upgradeSteps>
 </configure>
