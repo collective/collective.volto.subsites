@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.volto.subsites.content.subsite import ISubsite
 import os
+from plone import api
 from plone.dexterity.utils import iterSchemata
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.interfaces import IFieldSerializer
@@ -48,7 +49,12 @@ class Subsite(object):
                 break
         if not subsite:
             if SUBSITE_STYLE_DEFAULT:
+                portal = api.portal.get()
                 return {
+                    "@id": f"{portal.absolute_url()}/",
+                    "title": portal.Title(),
+                    "description": portal.Description(),
+                    "type_title": "Sottosito",
                     "subsite_css_class": {
                         "title": SUBSITE_STYLE_DEFAULT,
                         "token": SUBSITE_STYLE_DEFAULT,
