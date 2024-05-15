@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.volto.subsites.content.subsite import ISubsite
+import os
+from plone import api
 from plone.dexterity.utils import iterSchemata
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.interfaces import IFieldSerializer
@@ -20,6 +22,8 @@ FIELDS = [
     "subsite_social_links",
     "image",
 ]
+
+SUBSITE_STYLE_DEFAULT = os.environ.get("SUBSITE_STYLE_DEFAULT", None)
 
 
 @implementer(IExpandableElement)
@@ -42,8 +46,22 @@ class Subsite(object):
         for item in self.context.aq_chain:
             if ISubsite.providedBy(item):
                 subsite = item
+                break
         if not subsite:
-            return {}
+            if SUBSITE_STYLE_DEFAULT:
+                portal = api.portal.get()
+                return {
+                    "@id": f"{portal.absolute_url()}/",
+                    "title": portal.Title(),
+                    "description": portal.Description(),
+                    "type_title": "Sottosito",
+                    "subsite_css_class": {
+                        "title": SUBSITE_STYLE_DEFAULT,
+                        "token": SUBSITE_STYLE_DEFAULT,
+                    },
+                }
+            else:
+                return {}
 
         serializer = queryMultiAdapter((subsite, self.request), ISerializeToJsonSummary)
 
