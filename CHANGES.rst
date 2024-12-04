@@ -5,7 +5,8 @@ Changelog
 1.5.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- update translation
+  [lucabel]
 
 
 1.5.0 (2024-05-05)
