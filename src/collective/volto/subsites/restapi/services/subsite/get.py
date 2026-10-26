@@ -42,6 +42,7 @@ class Subsite(object):
         for item in self.context.aq_chain:
             if ISubsite.providedBy(item):
                 subsite = item
+                break
         if not subsite:
             return {}
 

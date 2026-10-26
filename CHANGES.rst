@@ -5,7 +5,8 @@ Changelog
 1.5.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Now annidated subsites are possible: the search is from leafs to root
+  [fedevancin]
 
 
 1.5.1 (2024-12-12)
