@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.5.2 (unreleased)
+1.6.0 (2026-10-28)
 ------------------
 
 - Now annidated subsites are possible: the search is from leafs to root
